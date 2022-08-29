@@ -15,13 +15,49 @@
 }
 
 .ModalOpen {
-	z-index: 200;
-	opacity: 1;
-	transform: translateY(0);
+	animation: openModal 0.4s ease-out forwards;
 }
 
 .ModalClosed {
-	z-index: -150;
-	opacity: 0;
-	transform: translateY(-100%);
+	animation: closeModal 0.4s ease-out forwards;
+}
+
+@keyframes openModal {
+	0% {
+		z-index: 200;
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+
+	50% {
+		z-index: 200;
+		opacity: 1;
+		transform: translateY(20%);
+	}
+
+	100% {
+		z-index: 200;
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes closeModal {
+	0% {
+		z-index: -150;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	50% {
+		z-index: -150;
+		opacity: 1;
+		transform: translateY(10%);
+	}
+
+	100% {
+		z-index: -150;
+		opacity: 0;
+		transform: translateY(-100%);
+	}
 }
